@@ -67,8 +67,21 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  const queenX = queen.x;
+  const queenY = queen.y;
+  const kingY = king.y;
+  const kingX = king.x;
+
+  if (
+    queenX === kingX ||
+    Math.abs(queenX - kingX) === Math.abs(queenY - kingY) ||
+    queenY === kingY
+  ) {
+    return true;
+  }
+
+  return false;
 }
 
 /**
@@ -286,6 +299,18 @@ function rotateMatrix(/* matrix */) {
  *  [2, 9, 5, 9]    => [2, 5, 9, 9]
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
+// const sortedArr = arr.slice();
+// const n = sortedArr.length;
+// for (let i = 0; i < n - 1; i += 1) {
+//   for (let j = 0; j < n - i - 1; j += 1) {
+//     if (sortedArr[j] > sortedArr[j + 1]) {
+//       const temp = sortedArr[j];
+//       sortedArr[j] = sortedArr[j + 1];
+//       sortedArr[j + 1] = temp;
+//     }
+//   }
+// }
+// return sortedArr;
 function sortByAsc(/* arr */) {
   throw new Error('Not implemented');
 }
